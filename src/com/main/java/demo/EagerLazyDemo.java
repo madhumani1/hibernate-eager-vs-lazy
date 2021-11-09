@@ -51,7 +51,7 @@ public class EagerLazyDemo {
 			System.out.println("Madhukar: Instructor: "+tempInstructor);
 			
 			// get course for the instructor
-			//System.out.println("Madhukar: Courses: " + tempInstructor.getCourses());
+			System.out.println("Madhukar: Courses: " + tempInstructor.getCourses());
 			
 			// commit the transaction
 			session.getTransaction().commit();
@@ -62,7 +62,7 @@ public class EagerLazyDemo {
 			// close session - THIS WILL BREAK CODE AND THROW EXCEPTION. DOING IT TO TEST LAZY FETCH THAT COURSE
 			// DATA IS FETCHED ON DEMAND. NOTE: Courses are lazy loaded from Instructor.
 			// get course for the instructor. IT WILL THROW  org.hibernate.LazyInitializationException
-			System.out.println("Madhukar: Courses: " + tempInstructor.getCourses());
+			//System.out.println("Madhukar: Courses: " + tempInstructor.getCourses());
 			System.out.println("Madhukar: Done!");
 		}	finally	{
 			if(session.isOpen())	{
